@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <div class="header">
+            <h1 id="title">Anonymously Send Text Messages</h1>
+        </div>
+
+        <div class="info">
+            <form onsubmit="getInfo(event)">
+                <label>Send to #:</label>
+                <input type="number" id="phoneNum">
+                <br><br>
+                <label>Message:</label>
+                <input type="text" id="message"><br><br>
+                <button class="btn" type="submit">Send!</button>
+            </form>
+              
+        </div>
+        
+        
+    </body>
+    <script type='module' src="index.js"></script>
+</html>        

@@ -4,15 +4,24 @@ const cors = require('cors');
 const Vonage = require('@vonage/server-sdk');
 
 const PORT = process.env.PORT || 8888;
-const FROM_SMS = "fillin";
+const FROM_SMS = 15792770668;
 
 const app = express();
-
 const vonage = new Vonage({
-    apiKey: "fillin",
-    apiSecret: "fillin",
+    apiKey: '74290ab0',
+    apiSecret: '5MQliHEru7PUsvSa',
 });
 
+let phoneNum, userMessage;
+
+function getInfo(e) {
+    e.preventDefault();
+    phoneNum = document.getElementById("phoneNum").value;
+    console.log(phoneNum);
+
+    userMessage = document.getElementById("message").value;
+    console.log(userMessage);
+}
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,6 +46,7 @@ app.get("/", async (_req, res) => {
  *      message: message to send    
  *  }
  */
+
 app.post("/sms", async (req, res) => {
     const { number, message } = req.body; // the client needs to send these properties to the server
     if (!number || !message) { // check if both number and message aren't null / undefined
